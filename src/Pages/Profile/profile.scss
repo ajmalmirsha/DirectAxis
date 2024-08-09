@@ -1,0 +1,44 @@
+.cover {
+    background-color: #6B705C;
+    height: 20vh;
+}
+
+.imageWrapper {
+    height: 28vh;
+    position: relative;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(39, 117, 74);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+.profile {
+    .email {
+        color: #6C6C6C;
+    }
+
+    .save-btn {
+        background-color: #A5A58D;
+        color: #ffff;
+    }
+
+    input {
+        border: 1px solid #E5E5E5;
+        border-radius: 5px;
+        outline: none;
+        padding: 5px;
+        width: 100%;
+    }
+
+    label {
+        color: #000000;
+    }
+}

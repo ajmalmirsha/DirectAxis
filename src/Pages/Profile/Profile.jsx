@@ -1,6 +1,29 @@
+import { useContext, useState } from "react";
 import "./profile.scss";
+import { Context } from "../../Context/Store";
 
 export default function Profile() {
+  const [user, setUser] = useState({
+    username: "",
+    email: "",
+    fName: "",
+    lName: "",
+    age: null,
+    place: "",
+    address: "",
+  });
+
+  const { userData, setUserData } = useContext(Context);
+
+  const handleInputChange = (e) => {
+    setUserData(e.target.name, e.target.value);
+    setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSave = () => {
+    console.log(userData);
+  };
+
   return (
     <div className="profile d-flex flex-column gap-4">
       <div className="imageWrapper">
@@ -18,35 +41,67 @@ export default function Profile() {
             <h5>BASIC INFO</h5>
             <div className="d-flex gap-3">
               <button className="btn btn-outline-secondary">Cancel</button>
-              <button className="btn save-btn">Save</button>
+              <button onClick={handleSave} className="btn save-btn">
+                Save
+              </button>
             </div>
           </div>
 
           <div className="d-flex gap-3">
             <div className="d-flex flex-column gap-1 w-100">
               <label htmlFor="fName">FIRST NAME</label>
-              <input id="fName" name="fName" type="text" />
+              <input
+                id="fName"
+                value={userData.fName}
+                onChange={handleInputChange}
+                name="fName"
+                type="text"
+              />
             </div>
             <div className="d-flex flex-column gap-1 w-100">
               <label htmlFor="lName">LAST NAME</label>
-              <input id="lName" name="lName" type="text" />
+              <input
+                id="lName"
+                value={userData.lName}
+                onChange={handleInputChange}
+                name="lName"
+                type="text"
+              />
             </div>
           </div>
 
           <div className="d-flex gap-3">
             <div className="d-flex flex-column gap-1 w-100">
               <label htmlFor="age">AGE</label>
-              <input id="age" name="age" type="number" />
+              <input
+                id="age"
+                value={userData.age}
+                onChange={handleInputChange}
+                name="age"
+                type="number"
+              />
             </div>
             <div className="d-flex flex-column gap-1 w-100">
               <label htmlFor="place">PLACE</label>
-              <input id="place" name="place" type="text" />
+              <input
+                id="place"
+                value={userData.place}
+                onChange={handleInputChange}
+                name="place"
+                type="text"
+              />
             </div>
           </div>
 
           <div className="d-flex flex-column gap-1 w-100">
             <label htmlFor="address">ADDRESS</label>
-            <input id="address" name="address" type="text" />
+            <input
+              id="address"
+              value={userData.address}
+              onChange={handleInputChange}
+              name="address"
+              type="text"
+            />
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ export default function Layout() {
 
   return (
     <div className="">
-      <nav className="d-flex flex-row px-3 cursor-pointer-parent justify-content-between align-items-center text-white">
+      <nav className="navWrapper d-flex flex-row px-3 cursor-pointer-parent justify-content-between align-items-center text-white">
         <div>
 
         </div>

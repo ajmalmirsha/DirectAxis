@@ -13,7 +13,7 @@ This React.js web application, built with Vite, react-bootstrap, and SCSS, provi
 - **Product Display**: Products are showcasing with details such as product name, price, rating, and image.
 - **Filtering and Sorting**: Users can filter products based on categories and sort them by price.
 - **Search Functionality**: A search feature allows users to find products by name.
-- **Pagination/Infinite Scrolling**: The application handles large product lists with either infinite scrolling.
+- **Infinite Scrolling**: The application handles large product lists with either infinite scrolling.
 
 ### Cart Functionality
 

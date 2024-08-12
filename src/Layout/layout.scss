@@ -1,10 +1,14 @@
 .navWrapper {
   height: 8vh;
-  background-color: #494b40;
+  background-color: #538392;
 }
 
 .cursor-pointer-parent {
   * {
     cursor: pointer;
   }
+}
+
+.logout-btn {
+  background-color: #80B9AD !important;
 }

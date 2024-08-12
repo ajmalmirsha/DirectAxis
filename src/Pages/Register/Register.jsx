@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import LoginCover from "../../../src/assets/Login.svg";
-import style from "./register.module.css";
+import "./register.scss";
 import { useEffect, useState } from "react";
 import useAuth from "../../Utils/Authentication";
 
@@ -54,7 +54,7 @@ export default function Register() {
           <br />
 
           <div className="d-flex flex-column gap-3">
-            <div className={`${style.inputWrapper} d-flex flex-column gap-1`}>
+            <div className={`inputWrapper d-flex flex-column gap-1`}>
               <label htmlFor="username">Username</label>
               <input
                 type="text"
@@ -66,7 +66,7 @@ export default function Register() {
               />
             </div>
 
-            <div className={`${style.inputWrapper} d-flex flex-column gap-1`}>
+            <div className={`inputWrapper d-flex flex-column gap-1`}>
               <label htmlFor="email">Email</label>
               <input
                 type="email"
@@ -78,7 +78,7 @@ export default function Register() {
               />
             </div>
 
-            <div className={`${style.inputWrapper} d-flex flex-column gap-1`}>
+            <div className={`inputWrapper d-flex flex-column gap-1`}>
               <label htmlFor="password">Password</label>
               <input
                 type="password"
@@ -90,17 +90,17 @@ export default function Register() {
               />
             </div>
             <p className="text-danger">{!!errMsg && errMsg}</p>
-            <button className={`${style.submitBtn} btn`} onClick={handleSubmit}>
+            <button className={`submitBtn btn`} onClick={handleSubmit}>
               Submit
             </button>
-            <p className={style.register}>
+            <p className={"register"}>
               Already have an account?{" "}
               <span onClick={handleLoginNavigate}>Login</span>
             </p>
           </div>
         </div>
       </div>
-      <div className={style.ImageWrapper}>
+      <div className={"ImageWrapper"}>
         <img src={LoginCover} alt="" />
       </div>
     </div>

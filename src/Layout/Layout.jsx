@@ -21,7 +21,7 @@ export default function Layout() {
           <p onClick={() => navigate("/profile")}>Profile</p>
         </div>
         <div className="d-flex flex-row justify-content-end">
-          <button onClick={logOut} className="btn btn-outline-danger">
+          <button onClick={logOut} className="btn logout-btn">
             Logout
           </button>
         </div>

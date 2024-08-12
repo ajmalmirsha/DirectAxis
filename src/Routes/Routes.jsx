@@ -4,12 +4,14 @@ import Login from "../Pages/Login/Login";
 import Home from "../Pages/Home/Home";
 import Register from "../Pages/Register/Register";
 import Profile from "../Pages/Profile/Profile";
+import Cart from "../Pages/Cart/Cart";
+import Error from "../Pages/Error/Error";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    errorElement: <Layout />,
+    errorElement: <Error />,
     children: [
       {
         path: "/home",
@@ -18,6 +20,10 @@ export const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

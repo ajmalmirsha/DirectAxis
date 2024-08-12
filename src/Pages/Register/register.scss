@@ -1,0 +1,34 @@
+.ImageWrapper {
+  height: 100vh;
+
+  img {
+    height: 100vh;
+  }
+}
+
+.inputWrapper {
+  input {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    padding: 0.5rem;
+    outline: none;
+    border-radius: 5px;
+    max-width: 80%;
+  }
+
+  label {
+    color: #181818;
+  }
+}
+
+.submitBtn {
+  background-color: #538392 !important;
+  color: #ffff !important;
+  max-width: 80%;
+}
+
+.register {
+  span {
+    color: #538392;
+    cursor: pointer;
+  }
+}

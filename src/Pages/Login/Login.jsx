@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import LoginCover from "../../../src/assets/Login.svg";
-import style from "./login.module.css";
+import "./login.scss";
 import useAuth from "../../Utils/Authentication";
 import { useEffect, useState } from "react";
 
@@ -36,9 +36,9 @@ export default function Login() {
   }, []);
 
   useEffect(() => {
-    if(errMsg){
+    if (errMsg) {
       setTimeout(() => {
-        setErrMsg("")
+        setErrMsg("");
       }, 2000);
     }
   }, [errMsg]);
@@ -54,7 +54,7 @@ export default function Login() {
           <br />
 
           <div className="d-flex flex-column gap-3">
-            <div className={`${style.inputWrapper} d-flex flex-column gap-1`}>
+            <div className={`inputWrapper d-flex flex-column gap-1`}>
               <label htmlFor="email">Email</label>
               <input
                 type="email"
@@ -66,7 +66,7 @@ export default function Login() {
               />
             </div>
 
-            <div className={`${style.inputWrapper} d-flex flex-column gap-1`}>
+            <div className={`inputWrapper d-flex flex-column gap-1`}>
               <label htmlFor="password">Password</label>
               <input
                 type="password"
@@ -80,17 +80,17 @@ export default function Login() {
 
             <p className="text-danger">{!!errMsg && errMsg}</p>
 
-            <button className={`${style.submitBtn} btn`} onClick={handleSubmit}>
+            <button className={`submitBtn btn`} onClick={handleSubmit}>
               Submit
             </button>
-            <p className={style.register}>
+            <p className="register">
               Don't have an account?{" "}
               <span onClick={handleRegisterNavigate}>Register for free.</span>
             </p>
           </div>
         </div>
       </div>
-      <div className={style.ImageWrapper}>
+      <div className="ImageWrapper">
         <img src={LoginCover} alt="" />
       </div>
     </div>

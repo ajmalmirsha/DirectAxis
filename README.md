@@ -35,7 +35,7 @@ This React.js web application, built with Vite, react-bootstrap, and SCSS, provi
 1. **Clone the Repository**
 
    ```bash
-   https://github.com/ajmalmirsha/DirectAxis.git
+   git clone https://github.com/ajmalmirsha/DirectAxis.git
 
    ```
 

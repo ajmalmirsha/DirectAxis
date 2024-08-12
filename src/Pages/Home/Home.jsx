@@ -22,6 +22,8 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [index, setIndex] = useState(6);
 
+  const navigate = useNavigate();
+
   async function fetchMoreData() {
     try {
       setLoading(true);
@@ -31,6 +33,7 @@ export default function Home() {
       setIndex((prevIndex) => prevIndex + 3);
     } catch (error) {
       console.log(error);
+      navigate("/error")
     } finally {
       setLoading(false);
     }
@@ -46,6 +49,7 @@ export default function Home() {
       setIndex((prevIndex) => prevIndex + 6);
     } catch (error) {
       console.log(error);
+      navigate("/error")
     } finally {
       setLoading(false);
     }
@@ -56,6 +60,7 @@ export default function Home() {
       const result = await getCategoryList();
       setCategoryList(result?.data || []);
     } catch (error) {
+      navigate("/error")
       console.log(error);
     }
   };

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../../Context/Store";
 import ProductImage from "../../Components/ProductImage/ProductImage";
-import EmptyImg from "../../assets/item_not_found.jpg"
+import EmptyImg from "../../assets/item_not_found.jpg";
 
 export default function () {
   const { getCartItems, addQty, minusQty, cartItems } = useContext(Context);
@@ -11,7 +11,6 @@ export default function () {
   const listCartItems = () => {
     setItems(getCartItems() || []);
   };
-
 
   useEffect(() => {
     listCartItems();
@@ -37,24 +36,27 @@ export default function () {
                         </h6>
                       </div>
 
-                      {!!cartItems?.length ?
+                      {!!cartItems?.length ? (
                         cartItems?.map((x) => (
                           <>
                             <hr className="my-4" />
                             <div className="row mb-4 d-flex justify-content-between align-items-center">
                               <div className="col-md-2 col-lg-2 col-xl-2">
-
                                 <ProductImage image={x?.image} />
+                                <h6 className="mb-0 text-center">
+                                  $ {x?.price}
+                                </h6>
                               </div>
                               <div className="col-md-3 col-lg-3 col-xl-3">
                                 {/* <h6 className="text-muted">Shirt</h6> */}
                                 <h6 className="mb-0">{x?.title}</h6>
                               </div>
+
                               <div className="col-md-3 col-lg-3 col-xl-2 d-flex align-items-center gap-3">
                                 <button
                                   data-mdb-button-init
                                   data-mdb-ripple-init
-                                  className="btn btn-secondary"
+                                  className="btn btn-cart"
                                   onClick={() => {
                                     minusQty(x?.id);
                                   }}
@@ -67,7 +69,7 @@ export default function () {
                                 <button
                                   data-mdb-button-init
                                   data-mdb-ripple-init
-                                  className="btn btn-secondary"
+                                  className="btn btn-cart"
                                   onClick={() => {
                                     addQty(x?.id);
                                   }}
@@ -75,9 +77,11 @@ export default function () {
                                   +
                                 </button>
                               </div>
+
                               <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                <h6 className="mb-0">$ {x?.price}.00</h6>
+                                <h6 className="mb-0">$ {x?.price * x?.qty}</h6>
                               </div>
+
                               <div className="col-md-1 col-lg-1 col-xl-1 text-end">
                                 <a href="#!" className="text-muted">
                                   <i className="fas fa-times"></i>
@@ -85,9 +89,15 @@ export default function () {
                               </div>
                             </div>
                           </>
-                        )) : 
-                        <img className="empty-img" src={EmptyImg} alt="" srcset="" />
-                        }
+                        ))
+                      ) : (
+                        <img
+                          className="empty-img"
+                          src={EmptyImg}
+                          alt=""
+                          srcset=""
+                        />
+                      )}
 
                       <div className="pt-5">
                         <h6 className="mb-0">
